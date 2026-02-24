@@ -3,18 +3,17 @@
 #include <stdexcept>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
   if (value < 2) {
     return false;
   }
-  if (value < 4) {
+  if (value == 2 || value == 3) {
     return true;
   }
   if (value % 2 == 0 || value % 3 == 0) {
     return false;
   }
-  for (std::size_t i = 5; i < i * i < value; i += 2) {
+  for (std::size_t i = 5; i * i < value; i += 2) {
     if (value % i == 0) {
       return false;
     }
@@ -36,12 +35,12 @@ uint64_t nPrime(uint64_t n) {
   while (count < n) {
     if (checkPrime(candidate)) {
       count++;
-        if (count == n) {
-          return candidate;
-        }
+      if (count == n) {
+        return candidate;
       }
+    }
     candidate += 2;
-  }  
+  }
   return 2;
 }
 
@@ -68,11 +67,7 @@ uint64_t sumPrime(uint64_t hbound) {
     return 0;
   }
 
-  uint64_t sum = 0;
-
-  if (hbound > 2) {
-    sum = 2;
-  }
+  uint64_t sum = 2;
 
   for (uint64_t i = 3; i < hbound; i += 2) {
     if (checkPrime(i)) {
