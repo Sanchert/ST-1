@@ -79,13 +79,13 @@ TEST(st1, sumPrime2) {
 }
 TEST(st1, sumtPrime3) {
   uint64_t res = sumPrime(4);
-  EXPECT_EQ(10, res);
+  EXPECT_EQ(5, res);
 }
 TEST(st1, sumPrime4) {
   uint64_t res = sumPrime(5);
-  EXPECT_EQ(17, res);
+  EXPECT_EQ(5, res);
 }
 TEST(st1, sumPrime5) {
   uint64_t res = sumPrime(23);
-  EXPECT_EQ(791, res);
+  EXPECT_EQ(77, res);
 }
