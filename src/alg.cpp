@@ -13,7 +13,7 @@ bool checkPrime(uint64_t value) {
   if (value % 2 == 0 || value % 3 == 0) {
     return false;
   }
-  for (std::size_t i = 5; i * i < value; i += 2) {
+  for (std::size_t i = 5; i * i <= value; i += 2) {
     if (value % i == 0) {
       return false;
     }
